@@ -167,6 +167,8 @@ void MainWindow :: on_pushButton_2_clicked() {
 }
 
 void MainWindow :: on_pushButton_3_clicked(){
+    int password = ui -> lineEdit2 -> text().toInt();
+    if(password == 1111){
     int pid;
     pid = ui -> lineEdit -> text().toInt();
     if (pid == 0){
@@ -186,6 +188,13 @@ void MainWindow :: on_pushButton_3_clicked(){
     }
     load_process_into_label();
     ui -> lineEdit -> clear();
+    }
+    else{
+        QMessageBox messageBox;
+        messageBox.critical(0, "Error", "Incorrect password");
+        messageBox.setFixedSize(1000, 300);
+        ui->lineEdit2->clear();
+    }
 }
 
 void MainWindow :: on_pushButton_4_clicked(){
