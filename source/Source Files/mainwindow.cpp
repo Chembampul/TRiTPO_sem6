@@ -201,6 +201,23 @@ void MainWindow :: on_pushButton_4_clicked(){
     }
 }
 
+void MainWindow::themeButton(){
+    if(radioButton.pressed()){
+        QPalette Pal(palette());
+        Pal.setColor(QPalette::Background, Qt::Black);
+        ui -> MainWindow -> setAutoFillBackground(true);
+        ui -> MainWindow -> setPalette(Pal);
+        ui -> MainWindow -> show();
+    }
+    else {
+        QPalette Pal(palette());
+        Pal.setColor(QPalette::Background, Qt::White);
+        ui -> MainWindow -> setAutoFillBackground(true);
+        ui -> MainWindow -> setPalette(Pal);
+        ui -> MainWindow -> show();
+    }
+}
+
 
 
 void MainWindow :: updateSystemInformation() {
